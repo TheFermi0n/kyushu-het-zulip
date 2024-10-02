@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../_css/render.css" />
+    <base target="_blank" />
+    <link rel="stylesheet" href="../_css/katex.min.css" />
+    <link rel="stylesheet" href="../_css/lightbox.min.css" />
+    <!--load all Font Awesome styles -->
+    <link href="../_css/all.min.css" rel="stylesheet" />
+    <script src="../_scripts/katex.min.js"></script>
+
+    <title>Read zulip archive</title>
+  </head>
+
+  <body>
+    <!-- <div class="header"> -->
+    <div class="container">
+      <!-- Sidebar -->
+      <div id="left" class="column main-sidebar">
+        <div class="sidebar-header">
+          <!-- realm icon -->
+          <div class="header-icon">
+            <img
+              src="/_resources/realm_icons/46063/realm/icon.png"
+              alt="Icon"
+              class="sidebar-icon"
+            />
+
+            <div class="header-icon-text">
+              <h2 style="margin-bottom: -1rem">kyushu-het</h2>
+              <p class="description">九大物理素粒子理論</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="channel-header badge badge-pill badge-teal">Channels</div>
+
+        <div class="sidebar" id="sidebar">
+          <div id="subjectList">
+            <!-- Subject list items will be inserted here dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <div id="right" class="column">
+        <!-- Main content -->
+        <div class="header">
+          <h1 id="subjectName"><i class="fa-solid fa-house"></i> Home</h1>
+          <p id="subjectDescription">
+            This is the homepage with all available messages. Use the channel
+            sidebar to filter by channel and subjects. You can also use the
+            search bar to search for a specific message in that subject.
+          </p>
+
+          <!-- Search bar -->
+          <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search" placeholder="Search messages..." />
+            
+            <select id="search-scope" onchange="filterMessages()">
+              <option value="all">All Messages</option>
+              <option value="channel">Current Channel</option>
+              <option value="subject">Current Subject</option>
+            </select>
+          </div>
+        </div>
+
+        <div
+          id="message-sub-head"
+          class="message-subject-header badge badge-pill badge-blue"
+        >
+          All Messages
+        </div>
+        <div class="message-container">
+          <!-- Messages -->
+          <div id="content"></div>
+          <div id="pagination"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Include the JS file -->
+    <script src="../_scripts/lightbox-plus-jquery.min.js"></script>
+    <script src="../_scripts/lightbox.min.js"></script>
+    <script src="../_scripts/render.js"></script>
+  </body>
+</html>
